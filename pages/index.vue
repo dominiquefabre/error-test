@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'my-layout',
+});
 
 const store = useStore();
 const { fetchedData, isLoading, isRestored } = storeToRefs(store);
