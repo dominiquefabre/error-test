@@ -4,7 +4,7 @@ import type { H3Event } from 'h3';
 export default defineEventHandler(async (event: H3Event) => {
   await delay(1500);
 
-  if (false) {
+  if (true) {
     throw createError({
       statusCode: 511,
       statusMessage: 'Fuck'

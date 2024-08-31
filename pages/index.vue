@@ -1,16 +1,11 @@
 <script setup lang="ts">
 
 const store = useStore();
-const { fetchedData, isLoading, isClient } = storeToRefs(store);
+const { fetchedData, isLoading, isRestored } = storeToRefs(store);
 
-watch(isClient, () => {
+watch(isRestored, () => {
   store.fetch();
-});
-
-if (process.client) {
-  store.setIsClient();
-}
-
+}, { immediate: true });
 </script>
 
 <template>
